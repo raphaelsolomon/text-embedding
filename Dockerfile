@@ -19,4 +19,4 @@ COPY . .
 # Set environment variable to avoid the transformers warning
 ENV HF_HOME=/app/.cache
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8009"]

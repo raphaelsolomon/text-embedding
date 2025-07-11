@@ -75,7 +75,7 @@ async def create_collection(request: CollectionRequest):
 
 @app.post("/embed", response_model=EmbedResponse)
 async def embed_and_store(request: EmbedRequest):
-    return await embed_and_store_to_qdrant(request)
+    return await embed_and_store_to_qdrant(request, model)
 
 @app.get("/all-articles")
 async def get_all_articles(
@@ -99,7 +99,7 @@ def start_api_server():
     """Start the FastAPI server"""
     import uvicorn
     logger.info("Starting API server")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8009)
 
 def signal_handler(sig, frame):
     """Handle system signals for graceful shutdown"""
