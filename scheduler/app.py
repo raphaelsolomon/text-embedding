@@ -1,5 +1,6 @@
 from datetime import timezone
 from config.logger import get_logger
+from controllers.background import background_task
 from scheduler.task_scheduler import TaskScheduler
 
 logger = get_logger(__name__)
@@ -19,8 +20,9 @@ async def setup_scheduler() -> TaskScheduler:
         logger.info("Registering Comparison job")
         scheduler.register_job(
             name="Comparison job update",
-            cron_expression="*/30 * * * *",  # Every 30 minutes
-            callback=tester,  # Replace None with your actual callback function
+            cron_expression="*/5 * * * * *",  # Every 5 seconds
+            # cron_expression="*/30 * * * *",  # Every 30 minutes
+            callback=background_task,
             timezone="UTC"
         )
 
@@ -29,5 +31,3 @@ async def setup_scheduler() -> TaskScheduler:
         logger.error(f"Error setting up scheduler: {str(e)}")
         raise e
     
-async def tester():
-    print("Scheduler is working correctly")

@@ -13,7 +13,7 @@ async def get_trending_articles_by_date(
     start_date: Optional[str] = None,
     end_date: Optional[str] = None,
     first: int = 100,
-    page: int = 1
+    page: int = 1,
 ):
     """
     Fetch articles from MongoDB based on created_at or published_date
