@@ -1,0 +1,41 @@
+# FastAPI and server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+
+# Sentence Transformers and ML - Fixed versions for compatibility
+sentence-transformers==2.7.0
+torch>=2.0.0,<2.2.0
+transformers==4.40.2
+huggingface-hub==0.23.0
+
+# Qdrant vector database
+qdrant-client==1.7.0
+
+# MongoDB async driver
+motor==3.3.2
+pymongo==4.6.0
+
+# Numerical computing
+numpy==1.24.3
+scipy==1.11.4
+
+# Async support
+aiofiles==23.2.1
+
+# Logging and utilities
+python-dotenv==1.0.0
+python-multipart==0.0.6
+
+# Additional dependencies for sentence-transformers
+scikit-learn>=1.0.2
+nltk>=3.8
+pillow>=9.0.0
+tqdm>=4.62.3
+
+# Optional but recommended
+httpx==0.25.2
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.0
+crontab==1.0.1
